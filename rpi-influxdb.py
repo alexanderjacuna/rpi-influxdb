@@ -23,24 +23,63 @@ user = "writer"
 password = "password" 
 dbname = "readings"
 measurement = subprocess.check_output("hostname", shell=True)
-measurement = measurement.strip() + "-" + dbname
+measurement1 = measurement.strip() + "-" + "temperature"
+measurement2 = measurement.strip() + "-" + "frequency"
+measurement3 = measurement.strip() + "-" + "memoryTotal"
+measurement4 = measurement.strip() + "-" + "memoryFree"
+measurement5 = measurement.strip() + "-" + "memoryUsed"
 
 # CREATE CLIENT OBJECT
 client = InfluxDBClient(host, port, user, password, dbname)
 
-# CREATE JSON
-data = [
+data1 = [
 {
-  "measurement": measurement,
+  "measurement": measurement1,
 	  "fields": {
-		  "temperature" : temperature,
-		  "frequency" : frequency,
-		  "memoryTotal" : memoryTotal,
-		  "memoryFree" : memoryFree,
-		  "memoryUsed" : memoryUsed
+		  "temperature" : temperature
+	  }
+  } 
+]
+
+data2 = [
+{
+  "measurement": measurement2,
+	  "fields": {
+		  "temperature" : frequency
+	  }
+  } 
+]
+
+data3 = [
+{
+  "measurement": measurement3,
+	  "fields": {
+		  "temperature" : memoryTotal
+	  }
+  } 
+]
+
+data4 = [
+{
+  "measurement": measurement4,
+	  "fields": {
+		  "temperature" : memoryFree
+	  }
+  } 
+]
+
+data5 = [
+{
+  "measurement": measurement5,
+	  "fields": {
+		  "temperature" : memoryUsed
 	  }
   } 
 ]
 
 # WRITE DATA
-client.write_points(data)
+client.write_points(data1)
+client.write_points(data2)
+client.write_points(data3)
+client.write_points(data4)
+client.write_points(data5)
