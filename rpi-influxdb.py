@@ -45,7 +45,7 @@ data2 = [
 {
   "measurement": measurement2,
 	  "fields": {
-		  "temperature" : frequency
+		  "frequency" : frequency
 	  }
   } 
 ]
@@ -54,7 +54,7 @@ data3 = [
 {
   "measurement": measurement3,
 	  "fields": {
-		  "temperature" : memoryTotal
+		  "memoryTotal" : memoryTotal
 	  }
   } 
 ]
@@ -63,7 +63,7 @@ data4 = [
 {
   "measurement": measurement4,
 	  "fields": {
-		  "temperature" : memoryFree
+		  "memoryFree" : memoryFree
 	  }
   } 
 ]
@@ -72,7 +72,7 @@ data5 = [
 {
   "measurement": measurement5,
 	  "fields": {
-		  "temperature" : memoryUsed
+		  "memoryUsed" : memoryUsed
 	  }
   } 
 ]
