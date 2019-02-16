@@ -16,7 +16,7 @@ memoryFree = round(float(memoryFree / 1024),1)
 
 memoryUsed = round(float(memoryTotal - memoryFree),1)
 
-# SET VARUABLES
+# SET VARIABLES
 host = "192.168.1.67"
 port = 8086
 user = "writer"
